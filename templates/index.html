@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("/static/images/nba.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 130%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+<body>
+<div class="bg-image"></div>
+
+<div class="bg-text">
+ <div class="content">
+    <div style="text-align: center">Predict of NBA Points Scored</div>
+     <br><br>
+    <div class="form">
+        <form action="/predict" method="post">
+        <label for="age">Person Age</label>
+        <input style="text-align: center" type="number" name="age" id="age" placeholder="Enter Age" min="18"  max="80">
+        <br><br>
+        <label for="pos">POSITION</label>
+        <select name="pos" id="pos">
+            <option value="SF">Small Forward</option>
+            <option value="C">Centre</option>
+            <option value="PF">Power Forward</option>
+            <option value="SG">Shooting Guard</option>
+            <option value="G">Guard</option>
+            <option value="F">Forward</option>
+        </select>
+        <br><br>
+        <label for="g">Number of Games Played</label>
+        <input type="number" name="g" id="g" placeholder="Enter Games Played">
+            <br><br>
+        <label for="gs">Number of games the player started</label>
+        <input type="number" name="gs" id="gs" placeholder="Enter Number of games the player started">
+        <br><br>
+            <label for="mp">Minutes Played</label>
+        <input type="number" name="mp" id="mp" placeholder="Enter Minutes Played">
+        <br><br>
+            <label for="fg">Field Goals Made</label>
+        <input type="number" name="fg" id="fg" placeholder="Enter Field Goals Made">
+        <br><br>
+            <label for="fga">Field Goals Attempted</label>
+        <input type="number" name="fga" id="fga" placeholder="Enter Field Goals Attempted">
+        <br><br>
+            <label for="x3p">3 Point Shots Made</label>
+        <input type="number" name="x3p" id="x3p" placeholder="Enter 3 Point Shots Made">
+        <br><br>
+            <label for="x3pa">3 Point Shots Attempted</label>
+        <input type="number" name="x3pa" id="x3pa" placeholder="Enter 3 Point Shots Attempted">
+        <br><br>
+            <label for="x2p">2 Point Shots Made</label>
+        <input type="number" name="x2p" id="x2p" placeholder="Enter 2 Point Shots Made">
+        <br><br>
+            <label for="x2pa">2 Point Shots Attempted</label>
+        <input type="number" name="x2pa" id="x2pa" placeholder="Enter 2 Point Shots Attempted">
+        <br><br>
+            <label for="ft">Number of Free Throws Made</label>
+        <input type="number" name="ft" id="ft" placeholder="Number of Free Throws Made">
+        <br><br>
+            <label for="fta">Number of Free Throws Attempted</label>
+        <input type="number" name="fta" id="fta" placeholder="Enter Number of Free Throws Attempted">
+        <br><br>
+            <label for="orb">Number of Offensive Rebounds</label>
+        <input type="number" name="orb" id="orb" placeholder="Enter Number of Offensive Rebounds">
+        <br><br>
+            <label for="drb">Number of Defensive Rebounds</label>
+        <input type="number" name="drb" id="drb" placeholder="Enter Number of Defensive Rebounds">
+        <br><br>
+            <label for="ast">Number of Assists</label>
+        <input type="number" name="ast" id="ast" placeholder="Enter Number of Assists">
+        <br><br>
+            <label for="stl">Total opponents’ possessions taken away</label>
+        <input type="number" name="stl" id="stl" placeholder="steals">
+        <br><br>
+            <label for="blk">Total number of opponents’ field goals blocked</label>
+        <input type="number" name="blk" id="blk" placeholder="Blocks">
+        <br><br>
+            <label for="tov">Total possessions given away</label>
+        <input type="number" name="tov" id="tov" placeholder="Turnovers">
+        <br><br>
+            <label for="pf">Total fouls commited by team</label>
+        <input type="number" name="pf" id="pf" placeholder="Personal Fouls">
+        <br><br>
+        <input value="Predict" type="submit">
+        </form>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>
